@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-void print_operation(char op, float x, float y);
-
-int main(int argc, char const *argv[])
+int main(int argc, char*argv[])
 {
-    float result = 0；
-  switch (op)
+    double x , y;
+    char* x_string = argv[2];
+    x = atof(x_string);
+    char* y_string = argv[3];
+    y = atof(y_string);
+    char operator = argv[1][0] ;
+    double result;
+  switch (operator)
    {
     case '+' : result = x + y;
     break;
@@ -15,8 +19,8 @@ int main(int argc, char const *argv[])
     break;
     case '/' : result = x / y;
     break;
-    default :
-    printf("Error: unrecognized operator %c\n, op");
+    default: result = 0;
+    printf("Error: unrecognized operator %c\n", operator);
   }
   printf("%f\n",result);
     return 0;
